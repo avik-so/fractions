@@ -52,6 +52,16 @@ VERSES`;
     expect(Bottles.verses(99, 98)).to.equal(expected);
   });
 
+  it('test six-pack verses', () => {
+    const expected = `<<-VERSES
+7 bottles of beer on the wall, 7 bottles of beer.
+Take one down and pass it around, 1 six-pack of beer on the wall.
+1 six-pack of beer on the wall, 1 six-pack of beer.
+Take one down and pass it around, 5 bottles of beer on the wall.
+VERSES`;
+    expect(Bottles.verses(7, 6)).to.equal(expected);
+  });
+
   it('test a few verses', () => {
     const expected = `<<-VERSES
 2 bottles of beer on the wall, 2 bottles of beer.
@@ -251,8 +261,8 @@ Take one down and pass it around, 8 bottles of beer on the wall.
 8 bottles of beer on the wall, 8 bottles of beer.
 Take one down and pass it around, 7 bottles of beer on the wall.
 7 bottles of beer on the wall, 7 bottles of beer.
-Take one down and pass it around, 6 bottles of beer on the wall.
-6 bottles of beer on the wall, 6 bottles of beer.
+Take one down and pass it around, 1 six-pack of beer on the wall.
+1 six-pack of beer on the wall, 1 six-pack of beer.
 Take one down and pass it around, 5 bottles of beer on the wall.
 5 bottles of beer on the wall, 5 bottles of beer.
 Take one down and pass it around, 4 bottles of beer on the wall.
