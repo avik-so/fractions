@@ -17,9 +17,6 @@ export class BottleNumber {
     return this.iteration.toString();
   }
 
-  public numOfContainer(): string {
-    return `${this.quantity()} ${this.container()}`;
-  }
   static getBottle(verse: number): BottleNumber {
     const bottleMap = {
       0: new ZeroBottles(),
@@ -29,6 +26,21 @@ export class BottleNumber {
     return bottleMap.hasOwnProperty(verse)
       ? bottleMap[verse]
       : new BottleNumber(verse);
+  }
+  public toString(): string {
+    return (
+      `${this.capitalize(`${this.numOfContainer()} of beer on the wall, `)}` +
+      `${this.numOfContainer()} of beer.\n` +
+      `${this.action()}, ` +
+      `${this.successor().numOfContainer()} of beer on the wall.`
+    );
+  }
+
+  private capitalize(phrase: string): string {
+    return `${phrase[0].toUpperCase()}${phrase.slice(1)}`;
+  }
+  public numOfContainer() {
+    return `${this.quantity()} ${this.container()}`;
   }
 }
 
