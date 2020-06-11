@@ -16,7 +16,7 @@ export class Bottles {
   private static composeVerses(from: number, to: number, type: string) {
     let verse = `<<-${type}\n`;
     for (let i = from; i >= to; i--) {
-      verse += BottleNumber.getBottle(i).toString() + '\n';
+      verse += `${BottleNumber.getBottleNumber(i)}`;
     }
     verse += type;
     return verse;
