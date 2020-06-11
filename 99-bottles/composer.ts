@@ -5,16 +5,13 @@ export class Composer {
     const bottle: BottleNumber = BottleNumber.getBottle(verse);
 
     return (
-      `${this.capitalize(this.numOfContainer(bottle))} of beer on the wall, ` +
-      `${this.numOfContainer(bottle)} of beer.\n` +
+      `${this.capitalize(bottle.numOfContainer())} of beer on the wall, ` +
+      `${bottle.numOfContainer()} of beer.\n` +
       `${bottle.action()}, ` +
-      `${this.numOfContainer(bottle.successor())} of beer on the wall.`
+      `${bottle.successor().numOfContainer()} of beer on the wall.`
     );
   }
 
-  static numOfContainer(bottle: BottleNumber) {
-    return `${bottle.quantity()} ${bottle.container()}`;
-  }
   static capitalize(phrase: string): string {
     return `${phrase[0].toUpperCase()}${phrase.slice(1)}`;
   }

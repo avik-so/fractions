@@ -16,6 +16,10 @@ export class BottleNumber {
   public quantity(): string {
     return this.iteration.toString();
   }
+
+  public numOfContainer(): string {
+    return `${this.quantity()} ${this.container()}`;
+  }
   static getBottle(verse: number): BottleNumber {
     const bottleMap = {
       0: new ZeroBottles(),
