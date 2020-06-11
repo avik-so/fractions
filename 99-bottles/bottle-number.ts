@@ -1,3 +1,4 @@
+import { Bottles } from './bottles';
 export class BottleNumber {
   private iteration: number = -1;
   constructor(iteration: number) {
@@ -9,8 +10,8 @@ export class BottleNumber {
   public action(): string {
     return 'Take one down and pass it around';
   }
-  public successor(): number {
-    return this.iteration - 1;
+  public successor(): BottleNumber {
+    return BottleNumber.getBottle(this.iteration - 1);
   }
   public quantity(): string {
     return this.iteration.toString();
@@ -35,8 +36,8 @@ class ZeroBottles extends BottleNumber {
     return 'Go to the store and buy some more';
   }
 
-  public successor(): number {
-    return 99;
+  public successor(): BottleNumber {
+    return new BottleNumber(99);
   }
   public quantity(): string {
     return 'no more';
