@@ -277,6 +277,6 @@ Take it down and pass it around, no more bottles of beer on the wall.
 No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
 SONG`;
-    expect(Bottles.verses(99, 0)).to.equal(expected);
+    expect(Bottles.song()).to.equal(expected);
   });
 });

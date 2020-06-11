@@ -2,9 +2,11 @@ import { Composer } from './composer';
 
 export class Bottles {
   static verses(from: number, to: number): any {
-    const fullSong = from == 99 && to == 0;
-    const type = fullSong ? 'SONG' : 'VERSES';
-    return Bottles.composeVerses(from, to, type);
+    return Bottles.composeVerses(from, to, 'VERSES');
+  }
+
+  static song(): any {
+    return Bottles.composeVerses(99, 0, 'SONG');
   }
 
   static verse(bottles: number): any {
