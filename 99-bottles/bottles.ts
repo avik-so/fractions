@@ -1,4 +1,4 @@
-import { Composer } from './composer';
+import { BottleNumber } from './bottle-number';
 
 export class Bottles {
   static verses(from: number, to: number): any {
@@ -16,7 +16,7 @@ export class Bottles {
   private static composeVerses(from: number, to: number, type: string) {
     let verse = `<<-${type}\n`;
     for (let i = from; i >= to; i--) {
-      verse += Composer.compose(i) + '\n';
+      verse += BottleNumber.getBottle(i).toString() + '\n';
     }
     verse += type;
     return verse;
