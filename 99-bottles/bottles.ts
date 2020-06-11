@@ -2,15 +2,15 @@ import { Composer } from './composer';
 
 export class Bottles {
   static verses(from: number, to: number): any {
-    return Bottles.composeVerses(from, to, 'VERSES');
+    return this.composeVerses(from, to, 'VERSES');
   }
 
   static song(): any {
-    return Bottles.composeVerses(99, 0, 'SONG');
+    return this.composeVerses(99, 0, 'SONG');
   }
 
   static verse(bottles: number): any {
-    return Bottles.composeVerses(bottles, bottles, 'VERSE');
+    return this.composeVerses(bottles, bottles, 'VERSE');
   }
 
   private static composeVerses(from: number, to: number, type: string) {
